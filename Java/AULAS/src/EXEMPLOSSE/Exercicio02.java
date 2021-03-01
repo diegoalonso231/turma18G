@@ -1,7 +1,7 @@
 package EXEMPLOSSE;
 
 import java.util.Scanner;
-
+//DEU PAL NA HORA DE TESTAR COM 0 "SOCORRO ED!!!"
 /*
  * Faça um programa que entre com três números e coloque em ordem crescente.
  * */
@@ -18,21 +18,21 @@ public static void main(String[] args) {
 	 // ||	(OU)
 	 // &&	(E)
 	if(a>c && a>b) 
-	{
-		if(c>b)
+		{
+			if(c>b)
 			System.out.println("\n1º: "+b+"\n2º: "+c+"\n3º: "+a);
 			else
 			{
 				System.out.println("\n1º: "+c+"\n2º: "+b+"\n3º: "+a);
 			}
-	}
+		}
 	else if(b>a && b>c) 
 	{
 		if(a>c)
-			System.out.println("\n1º: "+c+"\n2º: "+a+"\n3º: "+b);
+		System.out.println("\n1º: "+c+"\n2º: "+a+"\n3º: "+b);
 		else
 			{
-				System.out.println("\n1º: "+a+"\n2º: "+c+"\n3º: "+b);
+			System.out.println("\n1º: "+a+"\n2º: "+c+"\n3º: "+b);
 			}
 	}
 	else if(c>a && c>b)
@@ -46,7 +46,8 @@ public static void main(String[] args) {
 		}
 
 
-	}
 	
+	
+	}
 }
 
