@@ -9,9 +9,23 @@ public class Teste {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner leia = new Scanner(System.in);
-		Conta conta3 = new Conta(22,"222.222.222.22");
 		double valor;
 		char opcao;
+		
+		
+		System.out.println("Insira o numero: ");
+		 int numero = leia.nextInt();
+		 
+		System.out.println("Isira o nome: ");
+		 String nome = leia.next();
+		 System.out.println("CPF");
+		 String cpf = leia.next();
+		 
+
+		 
+		 
+		
+		
 		
 		System.out.println("Digite o valor: ");
 		valor = leia.nextDouble();
@@ -19,7 +33,7 @@ public class Teste {
 		opcao = leia.next().toUpperCase().charAt(0);
 		if(opcao == 'D') 
 		{
-			conta3.debito(valor);
+
 		}
 		else if (opcao == 'C')
 		{
