@@ -8,7 +8,7 @@ import CLASSES.ContaEspecial;
 import CLASSES.ContaPoupanca;
 
 
-public class Teste {
+public class Testee {
 
 	public static void main(String[] args) {
 		Scanner leia = new Scanner(System.in);

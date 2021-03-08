@@ -1,35 +1,29 @@
 package CLASSES;
 
 public class Conta {
-
-	private int numero;
-	private String cpf;
-	private double saldo;
-	private boolean ativa;
+	//atributos da classe Conta, dentro do pacote CLASSES: 
+	private int numero;											
+	private String cpf;											
+	protected double saldo;												
+	private boolean ativa;								
+	 	 		
 	
-	//contrutor - ze pedreiro
-	
-	public Conta(int numero, String cpf) 
-	{
+	//CONSTRUTORES
+	public Conta(int numero, String cpf) { 		
 		this.numero = numero;
 		this.cpf = cpf;
 	}
 	
-	//sobrecarga
-
-	public Conta(int numero) 
-	{
-		this.numero = numero;
+	public Conta(int numero) {  	
+		this.numero = numero; 
 	}
-
-	public Conta(int numero, String cpf, boolean ativa) {
-		super();
+	
+	public Conta(int numero, String cpf, boolean ativa) {  
 		this.numero = numero;
 		this.cpf = cpf;
 		this.ativa = ativa;
 	}
-
-	//ENCAPSULAMENTO - SEGURANÇA - GETTER AND SETTERS
+	//ENCAPSULAMENTO
 	public int getNumero() {
 		return numero;
 	}
@@ -48,9 +42,9 @@ public class Conta {
 
 	public double getSaldo() {
 		return saldo;
-	
 	}
 
+	//SET SALDO REMOVIDO. MÁXIMA DO PROJETO
 	public boolean isAtiva() {
 		return ativa;
 	}
@@ -59,39 +53,33 @@ public class Conta {
 		this.ativa = ativa;
 	}
 	
-	//metodos credito
-	public void credito(double valor) 
-	{
-		this.saldo = this.saldo + valor;
-		System.out.println("Saldo atual = "+saldo);
-	}
-	
-	//metodo debito, assim pode ficar negativo
-	public void debito(double valor)
-	{
-		if(this.saldo>=valor) 
-		{
-			this.saldo = this.saldo - valor;
-		System.out.println("Saldo atual = "+saldo);
+	//METODOS
+	public void credito(double valor) {
+		for (int i = 0; i <15; i++) {
+			System.out.println();
 		}
-		
+		this.saldo = this.saldo + valor;
+		System.out.printf("Depósito realizado no valor de: R$ %.2f ", valor);
+		System.out.printf("Saldo Disponível: R$ %.2f \n", this.saldo);
+		System.out.println();
 		
 	}
+	
+	public void debito (double valor) { 
+		for (int i = 0; i <15; i++) {
+			System.out.println();
+		}
+		if (this.saldo >= valor) {
+		this.saldo = this.saldo - valor;
+		System.out.printf("Saque de R$ %.2f. Retire seu dinheiro abaixo! \n", valor);
+		System.out.println();
+		System.out.printf("Saldo Disponível: R$ %.2f \n", this.saldo);
+		}
+		else if (valor > saldo) {
+			for (int i = 0; i <15; i++) {
+				System.out.println();
+			}System.out.println("Saldo insuficiente. Operação inválida");
+		}
 	}
-	//Segurança total - encapsulamento - getter and setters
-	//Segurança total-encapsulamento -getter and setters o saldo não pode ser alterado manualmente - não tem set.
-	//tira o set do saldo
+}
 	
-	//o saldo só pode ser mexido pelos metodos e as classes.
-	
-	//metodo
-/*	saldo = saldo - valor debitado
-			não pode deixar a conta negativa ou seja o valor debitado não pode ser maior que o saldo atual.
-	saldo = saldo + valor creditado
-
-credito
-debito 
-
-get e set quando for fazer conta no min tem que ter numero e cpf,
-*
-*/
