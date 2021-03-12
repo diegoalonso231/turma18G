@@ -14,17 +14,7 @@ public class ContaEstudantil extends Conta {//Diego
 
 	public void setLimiteEstudantil(double limiteEstudantil) {
 		this.limiteEstudantil = limiteEstudantil;
-}	/*
-	public void  usarEstudantil () {
-		double valor = 0.00;
-		super.getSaldo();
-		if(super.getSaldo() != super.getSaldo()) {
-			for(int i = 0;i<10;i++)
-			{
-				valor = super.getSaldo()+limiteEstudantil;
-				super.credito(valor);
-			}*/
-		
+}	
 	public void usarLimite (double valor) {
 		
 		if (valor > super.getSaldo() && valor <= super.getSaldo() + limiteEstudantil) {
