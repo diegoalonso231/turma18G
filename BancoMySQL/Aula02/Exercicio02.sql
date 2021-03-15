@@ -20,3 +20,57 @@ Faça um select onde traga todos os Produtos de uma categoria específica
 salve as querys para cada uma dos requisitos o exercício em um arquivo .
 SQL ou texto e coloque no seu GitHuB pessoal e compartilhe esta atividade.
 */
+
+create database db_pizzaria_legal;
+use db_pizzaria_legal;
+create table tb_categoria(
+id_categoria bigint auto_increment,
+pizza_tradicional varchar(25)not null,
+pizza_especial varchar(25)not null,
+pizza_light varchar(25)not null,
+primary key (id_categoria)
+);
+--até aqui foi
+
+create table tb_pizza(
+id_pizza bigint auto_increment,
+nome_pizza varchar (100) not null,
+ingredientes varchar (240) not null,
+descricao varchar (240) not null,
+tipo_borda varchar (240) not null,
+preco_pizza decimal(2,2) not null,
+fk_categoria bigint,
+primary key(id_pizza),
+foreign key (fk_categoria) references tb_categoria (id_categoria)
+);
+
+insert into tb_categoria (pizza_tradicional,pizza_especial,pizza_light)
+values ('broto','Descupe em falta','broto'),('media','media','media'),('grande','grande','Desculpe em falta');
+select * from tb_categoria;
+
+--até aqui foi porem não compilado.
+/*
+nome_pizza varchar (100) not null,
+ingredientes varchar (240) not null,
+descricao varchar (240) not null,
+tipo_borda varchar (240) not null,
+preco_pizza int not null,
+fk_categoria bigint not null,
+*/
+
+insert into tb_pizza (nome_pizza,ingredientes,descricao,tipo_borda,preco_pizza,fk_categoria)
+values ('6 Queijos','Gouda, Meia Cura, Minas padrão, Minas Frescal, Mussarela, Montanhês','O melhor dos nosso produtos se referindo a quejo, nesta pizza, encontrada a descrição de AMOR',
+'Borda de palmito com Mussarela','100,00','3');
+select * from tb_pizza;
+
+insert into tb_pizza(nome_pizza,ingredientes,descricao,tipo_borda,preco_pizza,fk_categoria)
+values ('5 Queijos','Gouda Meia, Cura, Minas padrão, Minas Frescal, Mussarela','O segundo melhor dos nosso produtos se referindo a quejo, nesta pizza, encontrada a descrição de AMOR',
+'Borda de palmito com Mussarela',80.00,3);
+
+insert into tb_pizza(nome_pizza,ingredientes,descricao,tipo_borda,preco_pizza,fk_categoria)
+values ('4 Queijos','Gouda Meia, Cura, Minas padrão, Minas Frescal','O terceiro melhor dos nosso produtos se referindo a quejo, nesta pizza, encontrada a descrição de AMOR',
+'Borda de palmito com Mussarela','70.00',3);
+
+insert into tb_pizza(nome_pizza,ingredientes,descricao,tipo_borda,preco_pizza,fk_categoria)
+values ('3 Queijos','Gouda Meia, Cura, Minas padrão','O quarto melhor dos nosso produtos se referindo a quejo, nesta pizza, encontrada a descrição de AMOR',
+'Borda de palmito com Mussarela','40.00',3);
